@@ -27,4 +27,14 @@ dob < '1973-08-28' order by 3 desc;
 
 select firstname, lastname from actor a
 join credit b on a.actorid = b.actorid
-where movieid = '4'
+where movieid = '4';
+
+select count(*) , lastname, firstname from credit a, actor b 
+ where a.actorid = '23' and a.actorid = b.actorid ;
+ 
+ select firstname, lastname, title from actor a, credit b, movie c
+ where a.actorid = b.actorid and b.movieid = c.movieid;
+ 
+ select firstname, lastname, role, title from actor a
+ left join credit b on b.actorid = a.actorid
+join movie c on b.movieid = c.movieid;
